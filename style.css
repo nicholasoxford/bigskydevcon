@@ -1,0 +1,325 @@
+body {
+  background-color: #0e567c;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex.column {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+
+}
+
+.speaker-info {
+  color: white
+}
+
+.speaker-img {
+  width: 200px;
+  /* Set a fixed width */
+  height: 200px;
+  /* Set a fixed height */
+  object-fit: cover;
+  /* Ensure the image covers the container without distortion */
+  object-position: center center;
+  /* Center the image within the container */
+  border-radius: 50%;
+  /* Make it a circle */
+  display: block;
+  /* Ensure it's a block element */
+  margin: 0 auto;
+  /* Center the image horizontally */
+
+
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky+.content {
+  padding-top: 60px;
+}
+
+#part1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#speakers {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 63.25vw;
+}
+
+#speakers-header {
+  width: 100%;
+  text-align: center;
+}
+
+#speakers-images {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  gap: 90px 75px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+}
+
+#part2 {
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.part1-info,
+.part2-info {
+  width: 30%;
+  gap: 40px;
+  padding: 1%;
+}
+
+
+
+p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: black;
+  z-index: -5;
+}
+
+h1 {
+  font-size: 10vw;
+  font-weight: 800;
+  left: 20px;
+  line-height: 1;
+  color: white;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1;
+  color: white;
+}
+
+#hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#big-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#big-logo img {
+  max-width: 100%;
+  /* Make the image responsive */
+  height: auto;
+  /* Maintain the aspect ratio */
+}
+
+#big-sky-hero-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+button {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 200;
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px 0;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  border: 1px solid white;
+}
+
+
+
+#part3 {
+  height: 100vh;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 50px;
+}
+
+a {
+  color: white;
+}
+
+.scroll-icon {
+  height: 50px;
+  width: 35px;
+  border: 1px solid white;
+  border-radius: 100px;
+  padding: 5px 14px 20px 14px;
+  box-sizing: border-box;
+}
+
+.scroll {
+  height: 10px;
+  width: 5px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.key {
+  display: inline-block;
+  letter-spacing: -2vw;
+  transition: transform 0.2s;
+}
+
+.key-space {
+  display: inline-block;
+  letter-spacing: -2vw;
+  transition: transform 0.2s;
+}
+
+.top-aligned-text {
+  vertical-align: top;
+  line-height: 1;
+  color: white;
+  /* Optional: Set the line height to control spacing between lines of text */
+}
+
+
+/* 
+Transforms the key to a pressed state
+*/
+@keyframes pressDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+
+  #part1,
+  #part2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .bar {
+    display: none;
+  }
+
+  h1 {
+    top: 20vw;
+    font-size: 15vw;
+  }
+
+  .part1-info,
+  .part2-info {
+    width: 100%;
+
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+
+  #hero {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  #speakers-images {
+    height: fit-content;
+  }
+
+  .speaker-img {
+    width: 150px;
+    height: 150px;
+  }
+}
