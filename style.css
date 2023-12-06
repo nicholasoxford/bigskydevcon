@@ -45,30 +45,10 @@ body {
   text-align: center;
   padding: 14px;
   text-decoration: none;
-
 }
 
 .speaker-info {
-  color: white
-}
-
-.speaker-img {
-  width: 200px;
-  /* Set a fixed width */
-  height: 200px;
-  /* Set a fixed height */
-  object-fit: cover;
-  /* Ensure the image covers the container without distortion */
-  object-position: center center;
-  /* Center the image within the container */
-  border-radius: 50%;
-  /* Make it a circle */
-  display: block;
-  /* Ensure it's a block element */
-  margin: 0 auto;
-  /* Center the image horizontally */
-
-
+  color: white;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
@@ -79,7 +59,7 @@ body {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky+.content {
+.sticky + .content {
   padding-top: 60px;
 }
 
@@ -108,14 +88,35 @@ body {
 
 #speakers-images {
   width: 100%;
+  height: 100%;
   text-align: center;
   display: flex;
-  gap: 90px 75px;
+  gap: 30px; /* Reduced the gap for better visual grouping */
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  height: 100%;
+  margin-bottom: 30px; /* Added some space at the bottom */
+  overflow: auto; /* Hide the overflow */
+}
+
+.speaker-img {
+  width: 15vw; /* Responsive width */
+  height: 15vw; /* Responsive height, keeping the aspect ratio */
+  max-width: 200px; /* Maximum size */
+  max-height: 200px; /* Maximum size */
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: box-shadow 0.3s ease, transform 0.2s ease; /* Smooth transition for shadow and transform */
+}
+
+.speaker-img:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifted' effect */
+  transform: scale(1.05); /* Slightly scale up the images on hover */
 }
 
 #part2 {
@@ -125,7 +126,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .part1-info,
@@ -134,8 +134,6 @@ body {
   gap: 40px;
   padding: 1%;
 }
-
-
 
 p {
   margin: 0;
@@ -198,8 +196,6 @@ h2 {
   align-items: center;
 }
 
-
-
 button {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: transparent;
@@ -216,9 +212,8 @@ button:hover {
   border: 1px solid white;
 }
 
-
-
 #part3 {
+  // height needs to fit all the content
   height: 100vh;
   justify-content: space-between !important;
   align-items: center !important;
@@ -264,12 +259,10 @@ a {
   /* Optional: Set the line height to control spacing between lines of text */
 }
 
-
 /* 
 Transforms the key to a pressed state
 */
 @keyframes pressDown {
-
   0%,
   100% {
     transform: translateY(0);
@@ -281,7 +274,6 @@ Transforms the key to a pressed state
 }
 
 @media screen and (max-width: 1250px) {
-
   #part1,
   #part2 {
     flex-direction: column;
@@ -302,7 +294,6 @@ Transforms the key to a pressed state
   .part1-info,
   .part2-info {
     width: 100%;
-
   }
 
   h2 {
@@ -315,11 +306,86 @@ Transforms the key to a pressed state
   }
 
   #speakers-images {
-    height: fit-content;
+    align-content: flex-start;
   }
 
   .speaker-img {
     width: 150px;
     height: 150px;
+  }
+}
+
+.schedule {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.schedule {
+  max-width: 100%; /* Use the full width on all screen sizes */
+  margin: 0 auto;
+  padding: 0; /* Remove padding */
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Hide any overflow */
+}
+
+.schedule-title {
+  text-align: center;
+  color: #333;
+  padding: 15px; /* Add padding only to the title for spacing */
+  margin: 0; /* Remove margin */
+  font-size: 1.5rem; /* Adjust font size */
+}
+
+.schedule-item {
+  display: grid; /* Switch to grid layout */
+  grid-template-columns: 1fr 3fr; /* Time column is 1/4, event is 3/4 */
+  border-bottom: 1px solid #ddd;
+  padding: 10px; /* Uniform padding */
+  gap: 10px; /* Space between grid items */
+}
+
+.schedule-time {
+  font-size: 0.9rem; /* Smaller font size */
+  color: #666;
+  align-self: center; /* Align time vertically in the center */
+}
+
+.schedule-event {
+  padding-left: 10px; /* Space before the event title */
+}
+
+.event-title {
+  font-size: 1.1rem; /* Adjust font size */
+  color: #333;
+  margin: 0; /* Remove margin */
+}
+
+.event-speaker {
+  font-size: 0.8rem; /* Smaller font size */
+  color: #888;
+  margin: 0; /* Remove margin */
+}
+
+@media (min-width: 600px) {
+  .schedule-item {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(250px, 1fr)
+    ); /* Create a responsive multi-column layout */
+  }
+}
+
+@media (min-width: 900px) {
+  .schedule {
+    max-width: 860px; /* Fixed max-width for larger screens */
+    padding: 20px;
+  }
+  .schedule-item {
+    padding: 10px 20px; /* Increase padding for larger screens */
   }
 }

@@ -69,3 +69,9 @@ function stickyScroll() {
     navbar.classList.remove("sticky");
   }
 }
+
+window.onload = function () {
+  var speakersImages = document.getElementById("speakers-images");
+  console.log({ speakersImages });
+  speakersImages.scrollTop = 0; // Reset the scroll position to the top
+};
