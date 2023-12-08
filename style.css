@@ -75,10 +75,20 @@ body {
 #speakers {
   height: 100vh;
   display: flex;
-  flex-flow: column;
+  flex-direction: column; /* changed from flex-flow */
   align-items: center;
   justify-content: center;
-  width: 63.25vw;
+  width: 100%; /* full width by default */
+  max-width: 63.25vw; /* maximum width on larger screens */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+  #speakers {
+    height: auto; /* adjust height for mobile */
+    max-width: 100%; /* full width on small screens */
+    padding: 20px; /* add some padding */
+  }
 }
 
 #speakers-header {
@@ -88,7 +98,7 @@ body {
 
 #speakers-images {
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   text-align: center;
   display: flex;
   gap: 30px; /* Reduced the gap for better visual grouping */
