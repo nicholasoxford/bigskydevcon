@@ -41,15 +41,28 @@ html {
   width: 100%;
 }
 
+#navbar img {
+  height: 3.5vh;
+  width: 3.5vh;
+  padding: 4px;
+}
+
 /* Navbar links */
 #navbar a {
   float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px;
+  padding: 10px;
+  padding-right: 14px;
   text-decoration: none;
-  font-size: calc(12px + 1.5vw);
+  font-size: 1.5vh;
+}
+
+#fire-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .speaker-info {
@@ -198,7 +211,7 @@ h2 {
 }
 
 #big-logo img {
-  max-width: 100%;
+  max-width: 105%;
   /* Make the image responsive */
   height: auto;
   /* Maintain the aspect ratio */
