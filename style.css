@@ -83,7 +83,7 @@ body {
 }
 
 /* Media Query for Mobile Devices */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   #speakers {
     height: auto; /* adjust height for mobile */
     max-width: 100%; /* full width on small screens */
