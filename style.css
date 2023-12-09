@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   font-family: "Bricolage Grotesque", sans-serif;
 }
