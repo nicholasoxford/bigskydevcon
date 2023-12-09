@@ -11,7 +11,7 @@ body {
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: hidden; /* https://stackoverflow.com/questions/46012482/unwanted-white-space-on-right-side-in-mobile-view */
 }
 
 * {
@@ -49,6 +49,7 @@ html {
   text-align: center;
   padding: 14px;
   text-decoration: none;
+  font-size: calc(12px + 1.5vw);
 }
 
 .speaker-info {
@@ -227,7 +228,7 @@ button:hover {
 }
 
 #part3 {
-  // height needs to fit all the content
+  /* height needs to fit all the content */
   height: 100vh;
   justify-content: space-between !important;
   align-items: center !important;
