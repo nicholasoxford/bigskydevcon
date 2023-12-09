@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   font-family: "Bricolage Grotesque", sans-serif;
 }
@@ -45,6 +49,13 @@ body {
   text-align: center;
   padding: 14px;
   text-decoration: none;
+  font-size: 1.5vh;
+}
+
+#navbar img {
+  height: 4vh;
+  width: 4vh;
+  padding-left: 5px;
 }
 
 .speaker-info {
@@ -223,7 +234,6 @@ button:hover {
 }
 
 #part3 {
-  // height needs to fit all the content
   height: 100vh;
   justify-content: space-between !important;
   align-items: center !important;
@@ -303,7 +313,7 @@ Transforms the key to a pressed state
 
   .part1-info,
   .part2-info {
-    width: 100%;
+    width: 95%;
   }
 
   h2 {
