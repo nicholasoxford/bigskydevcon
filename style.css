@@ -1,5 +1,5 @@
 body {
-  background-color: #0e567c;
+  background-color: #1e1e1e;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -10,35 +10,35 @@ body {
   overflow-x: hidden;
 }
 
+@font-face {
+  font-family: Citizen Slab;
+  src: url("public/citizen_slab_personal.otf") format("opentype");
+}
+
 html {
   overflow-x: hidden;
 }
 
 * {
-  font-family: "Bricolage Grotesque", sans-serif;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex.row {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flex.column {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  font-family: "Source Code Pro", sans-serif;
 }
 
 /* Style the navbar */
 #navbar {
   overflow: hidden;
-  background-color: #333;
-  width: 100%;
+  background: var(--Brand-Primary-P01, #1e1e1e);
+  display: flex;
+  padding: 24px 120px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.text-background {
+  background-color: rgba(216, 216, 216, 0.75);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 0 10px;
 }
 
 /* Navbar links */
@@ -62,29 +62,9 @@ html {
   color: white;
 }
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-
-#part1 {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
 #speakers {
-  height: 100vh;
+  height: 100%;
+  margin: 80px 80px;
   display: flex;
   flex-direction: column; /* changed from flex-flow */
   align-items: center;
@@ -140,23 +120,7 @@ html {
   transform: scale(1.05); /* Slightly scale up the images on hover */
 }
 
-#part2 {
-  height: 150vh;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.part1-info,
-.part2-info {
-  width: 30%;
-  gap: 40px;
-  padding: 1%;
-}
-
-p {
+x p {
   margin: 0;
   font-size: 18px;
   font-weight: 200;
@@ -171,6 +135,116 @@ p {
   top: 0;
   background-color: black;
   z-index: -5;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  max-height: 75vh;
+  overflow: hidden;
+}
+.left-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("public/images/trees.png");
+  background-size: cover;
+  position: relative; /* To position the logo absolutely within this container */
+  height: 955px;
+}
+.buffalo-logo {
+  position: absolute;
+  max-width: 100%; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  /* Position the logo as required, e.g., top: 20px; left: 20px; */
+}
+.right-column {
+  flex: 1;
+  padding-right: 60px;
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  overflow: scroll;
+}
+.about-header {
+  font-size: 48px;
+  font-family: "Citizen Slab", serif;
+  font-weight: 400;
+  line-height: 57.6px;
+}
+.about-text {
+  color: var(--Brand-Primary-P01, #1e1e1e);
+  leading-trim: both;
+
+  text-edge: cap;
+  /* Body/B—01/Regular */
+  font-family: "Source Code Pro";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%; /* 32.4px */
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  max-width: 1000px;
+  pad-left: 50px;
+}
+
+.big-sky {
+  font-family: "Citizen Slab", serif;
+  font-size: 80px; /* Adjust as needed */
+  color: black;
+  margin-bottom: 5px;
+}
+
+.dev-con {
+  font-family: "Citizen Slab", serif;
+  font-size: 80px; /* Adjust as needed */
+  color: white;
+  background-color: black;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 10px;
+  // only a little wider than content
+  width: fit-content;
+}
+
+.conference-text {
+  color: var(--Brand-Primary-P01, #1e1e1e);
+  text-align: center;
+  leading-trim: both;
+
+  text-edge: cap;
+  /* Headline/H—01 */
+  font-family: "Source Code Pro";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 135%; /* 86.4px */
+  margin-top: 10px;
 }
 
 h1 {
@@ -188,10 +262,18 @@ h2 {
 }
 
 #hero {
-  height: 100vh;
-  width: 100%;
   display: flex;
-  flex-direction: row;
+  width: 1920px;
+  max-height: 951px;
+  padding: 0px 120px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+}
+
+#hero-background {
+  background-image: url("public/images/cloud.png");
 }
 
 #big-logo {
@@ -233,13 +315,6 @@ button:hover {
   border: 1px solid white;
 }
 
-#part3 {
-  height: 100vh;
-  justify-content: space-between !important;
-  align-items: center !important;
-  margin-bottom: 50px;
-}
-
 a {
   color: white;
 }
@@ -258,154 +333,4 @@ a {
   width: 5px;
   border-radius: 10px;
   background-color: white;
-}
-
-.key {
-  display: inline-block;
-  letter-spacing: -2vw;
-  transition: transform 0.2s;
-}
-
-.key-space {
-  display: inline-block;
-  letter-spacing: -2vw;
-  transition: transform 0.2s;
-}
-
-.top-aligned-text {
-  vertical-align: top;
-  line-height: 1;
-  color: white;
-  /* Optional: Set the line height to control spacing between lines of text */
-}
-
-/* 
-Transforms the key to a pressed state
-*/
-@keyframes pressDown {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-@media screen and (max-width: 1250px) {
-  #part1,
-  #part2 {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  .bar {
-    display: none;
-  }
-
-  h1 {
-    top: 20vw;
-    font-size: 15vw;
-  }
-
-  .part1-info,
-  .part2-info {
-    width: 95%;
-  }
-
-  h2 {
-    font-size: 5vw;
-  }
-
-  #hero {
-    height: 100%;
-    flex-direction: column;
-  }
-
-  #speakers-images {
-    align-content: flex-start;
-  }
-
-  .speaker-img {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-.schedule {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.schedule {
-  max-width: 100%; /* Use the full width on all screen sizes */
-  margin: 0 auto;
-  padding: 0; /* Remove padding */
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Hide any overflow */
-}
-
-.schedule-title {
-  text-align: center;
-  color: #333;
-  padding: 15px; /* Add padding only to the title for spacing */
-  margin: 0; /* Remove margin */
-  font-size: 1.5rem; /* Adjust font size */
-}
-
-.schedule-item {
-  display: grid; /* Switch to grid layout */
-  grid-template-columns: 1fr 3fr; /* Time column is 1/4, event is 3/4 */
-  border-bottom: 1px solid #ddd;
-  padding: 10px; /* Uniform padding */
-  gap: 10px; /* Space between grid items */
-}
-
-.schedule-time {
-  font-size: 0.9rem; /* Smaller font size */
-  color: #666;
-  align-self: center; /* Align time vertically in the center */
-}
-
-.schedule-event {
-  padding-left: 10px; /* Space before the event title */
-}
-
-.event-title {
-  font-size: 1.1rem; /* Adjust font size */
-  color: #333;
-  margin: 0; /* Remove margin */
-}
-
-.event-speaker {
-  font-size: 0.8rem; /* Smaller font size */
-  color: #888;
-  margin: 0; /* Remove margin */
-}
-
-@media (min-width: 600px) {
-  .schedule-item {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(250px, 1fr)
-    ); /* Create a responsive multi-column layout */
-  }
-}
-
-@media (min-width: 900px) {
-  .schedule {
-    max-width: 860px; /* Fixed max-width for larger screens */
-    padding: 20px;
-  }
-  .schedule-item {
-    padding: 10px 20px; /* Increase padding for larger screens */
-  }
 }
