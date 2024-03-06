@@ -144,6 +144,17 @@ x p {
   text-align: center;
 }
 
+.image-container.main-hero {
+  background-image: url('public/images/cloud.png');
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   max-height: 75vh;
@@ -204,13 +215,8 @@ x p {
 }
 
 .text-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
   max-width: 1000px;
-  pad-left: 50px;
 }
 
 .big-sky {
