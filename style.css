@@ -41,15 +41,22 @@ html {
   margin: 0 10px;
 }
 
+#navbar .navbar-items {
+  display: flex;
+}
+
 /* Navbar links */
-#navbar a {
-  float: left;
+#navbar .navbar-items a {
   display: block;
-  color: #f2f2f2;
+  color: #000000;
   text-align: center;
   padding: 14px;
   text-decoration: none;
-  font-size: 1.5vh;
+  font-size: .8em;
+  background-color: #f2f2f2;
+  border-radius: .3rem;
+  margin: 0 .5em;
+  font-family: Source Code Pro, monospace;
 }
 
 #navbar img {
@@ -97,8 +104,8 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  margin-top: 1em; /* Add some margin up top */
   margin-bottom: 30px; /* Added some space at the bottom */
-  overflow: auto; /* Hide the overflow */
 }
 
 .speaker-img {
@@ -160,7 +167,6 @@ x p {
 
 .container {
   display: flex;
-  max-height: 75vh;
   overflow: hidden;
 }
 .left-column {
@@ -254,6 +260,11 @@ x p {
   font-weight: 500;
   line-height: 135%; /* 86.4px */
   margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Citizen Slab", serif;
+  font-weight: bold;
 }
 
 h1 {
