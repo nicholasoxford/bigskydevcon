@@ -505,7 +505,6 @@ What are you doing here? You should go register for BSDC instead: https://meetu.
     herdEm();
 
     function animateHerdSection (bisonSection, time) {
-      console.log('Animating herd');
       for (const singleBison of bisonSection) {
         if (singleBison.position < singleBison.rect - 1) {
           singleBison.element.style.display = `none`;
@@ -516,7 +515,6 @@ What are you doing here? You should go register for BSDC instead: https://meetu.
 
           if (movement < 5) {
             // simulate pauses
-            console.log('paused');
             continue;
           }
           singleBison.element.style.display = `block`;
