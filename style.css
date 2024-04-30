@@ -82,6 +82,7 @@ html {
   justify-content: center;
   width: 100%; /* full width by default */
   max-width: 63.25vw; /* maximum width on larger screens */
+  position: relative;
 }
 
 /* Media Query for Mobile Devices */
@@ -116,6 +117,10 @@ html {
   z-index: 1000;
 }
 
+.speaker-info {
+  transition: background-color 0.2s ease-in-out;
+}
+
 .speaker-img {
   width: 15vw; /* Responsive width */
   height: 15vw; /* Responsive height, keeping the aspect ratio */
@@ -126,14 +131,82 @@ html {
   border-radius: 50%;
   display: block;
   margin: 1em auto;
+  cursor: pointer;
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: all 0.3s ease, transform 0.2s ease; /* Smooth transition for shadow and transform */
+  transition: all 0.3s ease-in-out; /* Smooth transition for shadow and transform */
 }
 
 .speaker-info:hover .speaker-img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifted' effect */
   transform: scale(1.05); /* Slightly scale up the images on hover */
+}
+
+.speaker-info:not(.expanded) {
+  user-select: none;
+}
+
+.speaker-info.expanded .speaker-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+}
+
+.speaker-info.expanded .speaker-text {
+  text-align: left;
+}
+
+.speaker-info .bio {
+  display: none;
+  visibility: hidden;
+  color: black;
+}
+
+.speaker-info.expanded .bio {
+  display: block;
+  visibility: visible;
+}
+
+.speaker-info.expanded .name {
+  color: gray;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.speaker-info.expanded {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: .5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  padding-left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.speaker-info .close {
+  display: none;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.speaker-info.expanded .close {
+  display: block;
+  visibility: visible;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
 }
 
 #schedule-section {
@@ -250,6 +323,20 @@ x p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bison-herd {
+  height: 100px;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  left: 0;
+}
+
+.bison {
+  display: inline-block;
+  position: absolute;
 }
 
 .container {
