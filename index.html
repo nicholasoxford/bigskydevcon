@@ -39,7 +39,7 @@
       <div class="text-background">
         <h1 class="big-sky">BIG SKY</h1>
         <h2 class="dev-con">
-          < DEV CON>
+          &lt;DEV CON&gt;
         </h2>
         <p class="conference-text">Montana's summer technology conference is back!</p>
       </div>
@@ -47,7 +47,10 @@
   </div>
 
   <div
-    style="width: 100%; height: 100%; padding: 80px; background: #1E1E1E; flex-direction: column; justify-content: center; align-items: center; gap: 20px; display: inline-flex">
+    style="position: relative; width: 100%; height: 100%; padding: 80px; background: #1E1E1E; flex-direction: column; justify-content: center; align-items: center; gap: 20px; display: inline-flex; padding-bottom: 200px;">
+    <div class="bison-herd">
+
+    </div>
     <div style="justify-content: center; align-items: center; gap: 30px; display: inline-flex">
       <div style="width: 265px; height: 24px; background: #0F29E9"></div>
       <div style="width: 278px; height: 24px; background: #EFEFEF"></div>
@@ -73,7 +76,7 @@
       <div style="width: 83px; height: 24px; background: #F14436"></div>
     </div>
     <div
-      style="align-self: stretch; padding-left: 24px; padding-right: 24px; padding-top: 25px; padding-bottom: 25px; justify-content: center; align-items: center; gap: 30px; display: inline-flex">
+      style="align-self: stretch; padding-left: 24px; padding-right: 24px; padding-top: 25px; padding-bottom: 25px; justify-content: center; align-items: center; gap: 30px; display: inline-flex;">
       <div><span
           style="color: #D6FF62; font-size: 72px; font-family: Source Code Pro; font-weight: 500; line-height: 113.40px; word-wrap: break-word">{
         </span><span
@@ -151,50 +154,127 @@
 
   <div id="speakers">
     <div id="speakers-header">
-      <h2>Speakers </h2>
+      <h2>Speakers</h2>
     </div>
     <div id="speakers-images">
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/prime.jpeg">
-        ThePrimeagen
+        <div class="speaker-text">
+          <div class="name">ThePrimeagen</div>
+          <div class="bio">...</div>
+          </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/carson_gross.jpeg">
-        Carson Gross
+        <div class="speaker-text">
+          <div class="name">Carson Gross</div>
+          <div class="bio">...</div>
+          </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/ryan.jpeg">
-        Ryan Florence
+        <div class="speaker-text">
+          <div class="name">Ryan Florence</div>
+          <div class="bio">...</div>
+          </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/ken.jpg">
-        Ken Wheeler
+        <div class="speaker-text">
+          <div class="name">Ken Wheeler</div>
+          <div class="bio">React type dude, performance connoisseur, award winning musician</div>
+          </div>
+      </div>
+      <div class="speaker-info">
+        <img class="speaker-img" src="https://assets.bigskydevcon.com/sam.jpg">
+        <div class="speaker-text">
+          <div class="name">Sam Selikoff</div>
+          <div class="bio">Sam Selikoff has been teaching frontend development for over eight years through his videos on Build UI, YouTube, and
+        Egghead, as well as his podcast, in-person trainings, and conference talks. He's also a software consultant. Prior to
+        working for himself, he was a frontend engineer at TED Conferences.</div>
+        </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/tony.jpg">
-        Tony Alaribe
+        <div class="speaker-text">
+          <div class="name">Tony Alaribe</div>
+          <div class="bio">Anthony has over a decade of experience as a developer working on web applications. He spent many years building React
+        JS applications and decided that even simple applications took too long to build, until he met htmx. He is the founder
+        of the "APItoolkit API observability platform", and is passionate about optimizing developer productivity with tools
+        like Haskell, Htmx and Hyperscript (The H3 stack).</div>
+        </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/marcus.jpeg">
-        Marcus Twichel
+        <div class="speaker-text">
+          <div class="name">Marcus Twichel</div>
+          <div class="bio">I am a computer science graduate from Montana State, and while finishing school I led the technology at City Brew
+        Coffee. While there, I transformed their technology stack, including hand coding a new website, loyalty program, and
+        mobile app, and installing a new point of sale system.
+        
+        Since leaving City Brew, I joined a consultancy called Very Good Ventures first as a Senior Engineer, and recently
+        promoted to Engineering Lead. It is based in New York, though I work from home in Billings. We are the industry leaders
+        in Flutter, an open source cross platform UI framework maintained primary by Google. While at VGV, I've gotten to work
+        with companies like Toyota, Google, and Dutch Bros on building high quality software using Flutter.</div>
+        </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/kenny.jpg">
-        Kenny Ketner
+        <div class="speaker-text">
+          <div class="name">Kenny Ketner</div>
+          <div class="bio">Kenny Ketner is the Information Products Lead at the Montana State Library (MSL), where he has worked since 2016. His
+        team is responsible for application development and systems administration, frequently in collaboration with the GIS
+        professionals at MSL. He has worked as a programmer since 1999, with roles in the private sector, public sector, and as
+        a sole proprietor.</div>
+        </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/jaron.jpeg">
-        Jaron Jones
+        <div class="speaker-text">
+          <div class="name">Jaron Jones</div>
+          <div class="bio">I work as a Data Scientist for ELM Companies in Missoula, Montana and also teach as an adjunct lecturer of computer
+        science at the University of Montana. I have a masters in data science from University of California, Berkeley and
+        primarly work on Enterprise GIS problems in that space.
+        
+        Outside of work I create models for companies that operate in the sports betting space, serve on the IT advisory board
+        at the University, and have obtained every AWS associate certification.</div>
+        </div>
       </div>
       <div class="speaker-info">
         <img class="speaker-img" src="https://assets.bigskydevcon.com/ben.png">
-        Ben Damman
+        <div class="speaker-text">
+          <div class="name">Ben Damman</div>
+          <div class="bio">Ben Damman is the entrepreneurial full stack engineer behind Missoula.org. His past includes Apple, Symantec, The White
+        House, Google Fiber, Marriott, and California DMV.</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div
-    style="width: 100%; height: 1375px; padding-left: 120px; padding-right: 120px; padding-top: 80px;  background-image: url(public/images/hills.png); background-repeat: no-repeat;  background-attachment: scroll; background-position: center; flex-direction: column; justify-content: center; align-items: center; gap: 64px; display: inline-flex">
+  <div id="schedule-section">
+    <div id="schedule-header">
+      <h2>Conference Schedule</h2>
+    </div>
+
+    <ul id="schedule">
+      <li>
+        <span class="time">08:00am - 9:00am</span>
+        <span class="title">Badge Pickup, Breakfast, Networking</span>
+        <span class="who">Everyone</span>
+        <div class="color-bar" style="background-color: #0F29E9;"></div>
+      </li>
+      <li>
+        <span class="time">09:00am</span>
+        <span class="title">Opening Remarks</span>
+        <span class="who">By MTP + BSDC Organizers</span>
+        <div class="color-bar" style="background-color: green;"></div>
+      </li>
+      <li>
+        <span class="time">TBD-TBD</span>
+        <span class="title">To Be Determined...</span>
+        <div class="color-bar" style="background-color: yellow;"></div>
+      </li>
+    </ul>
   </div>
   <div>
     <div
@@ -235,15 +315,13 @@
             <img class="speaker-img" src="https://bigsky.software/img/bss.png">
             Bigsky Software
           </div>
-
-
         </div>
       </div>
     </div>
   </div>
 
   <div
-    style="width: 100%; height: 100%; padding-left: 120px; padding-right: 120px; padding-top: 80px; padding-bottom: 80px; background: #1E1E1E; flex-direction: column; justify-content: center; align-items: center; gap: 64px; display: inline-flex">
+    style="width: 100%; height: 100%; padding-left: 120px; padding-right: 120px; padding-top: 80px; padding-bottom: 80px; background: #1E1E1E; flex-direction: column; justify-content: center; align-items: center; gap: 64px; display: inline-flex;">
     <div
       style="width: 100%; text-align: center; color: #EFEFEF; font-size: 24px; font-family: Source Code Pro; font-weight: 400; line-height: 32.40px; word-wrap: break-word">
       Send questions to info@bigskydevcon.com!</div>
@@ -303,9 +381,151 @@
     </div>
   </div>
   </div>
+
+  <div class="bison" style="height: 20px; width: 20px;">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs">
+      <rect width="1" height="1" x="1" y="2" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="11" y="2" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="0" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="4" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="5" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="6" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="7" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="12" y="3" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="0" y="4" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="3" y="4" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="9" y="4" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="12" y="4" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="0" y="5" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="2" y="5" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="5" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="12" y="5" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="1" y="6" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="2" y="6" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="6" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="11" y="6" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="2" y="7" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="7" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="2" y="8" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="3" y="8" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="9" y="8" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="8" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="2" y="9" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="9" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="2" y="10" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="3" y="10" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="9" y="10" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="3" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="9" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="11" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="12" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="13" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="14" y="11" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="4" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="5" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="6" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="7" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="9" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="14" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="15" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="18" y="12" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="4" y="13" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="6" y="13" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="13" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="15" y="13" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="16" y="13" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="17" y="13" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="5" y="14" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="6" y="14" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="7" y="14" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="14" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="16" y="14" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="17" y="14" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="15" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="11" y="15" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="12" y="15" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="13" y="15" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="14" y="15" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="16" y="15" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="16" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="16" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="11" y="16" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="14" y="16" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="16" y="16" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="8" y="17" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="9" y="17" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="10" y="17" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="14" y="17" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="15" y="17" fill="hsl(0, 0%, 0%)"></rect><rect width="1" height="1" x="16" y="17" fill="hsl(0, 0%, 0%)"></rect>
+    </svg>
+  </div>
+
   <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
   <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
   <script src='https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js'></script>
+  <script type="text/javascript">
+    var speakerExpanded = false;
+
+    function closeAllSpeakers () {
+      speakerExpanded = false;
+      document.querySelectorAll('#speakers > #speakers-images > .speaker-info.expanded').forEach(function ($speaker) {
+        $speaker.classList.remove('expanded');
+      });
+    }
+    function handleSpeakerExpand ($speaker) {
+      return function (e) {
+        if (e.srcElement.classList.contains('close')) {
+          return;
+        }
+        closeAllSpeakers();
+        speakerExpanded = true;
+        $speaker.classList.add('expanded');
+      }
+    }
+
+    console.log(`
+▄▄▄▄· .▄▄ · ·▄▄▄▄   ▄▄· 
+▐█ ▀█▪▐█ ▀. ██▪ ██ ▐█ ▌▪
+▐█▀▀█▄▄▀▀▀█▄▐█· ▐█▌██ ▄▄
+██▄▪▐█▐█▄▪▐███. ██ ▐███▌
+·▀▀▀▀  ▀▀▀▀ ▀▀▀▀▀• ·▀▀▀ 
+
+What are you doing here? You should go register for BSDC instead: https://meetu.ps/e/MYfFK/nDqlg/i
+    `);
+
+    document.querySelectorAll('#speakers > #speakers-images > .speaker-info').forEach(function ($speaker) {
+      $speaker.addEventListener('click', handleSpeakerExpand($speaker));
+      const closeBtn = document.createElement('div');
+      closeBtn.classList.add('close');
+      closeBtn.innerText = `close('${$speaker.querySelector('.name').innerText}')`;
+      $speaker.prepend(closeBtn);
+    });
+
+    document.querySelectorAll('.speaker-info .close').forEach(function ($speakerClose) {
+      $speakerClose.addEventListener('click', closeAllSpeakers);
+    });
+
+    window.addEventListener('click', function (e) {
+      const srce = e.srcElement;
+      if (speakerExpanded && !srce.classList.contains('speaker-img') && !srce.classList.contains('speaker-info') && !srce.id.includes('speaker') && !srce.classList.contains('name') && !srce.classList.contains('bio')) {
+        closeAllSpeakers();
+      }
+    });
+
+    function bisonColor () {
+      return '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+    }
+
+    function bisonScale (variance) {
+      return Math.random() * (variance - 1) + 1;
+    }
+    
+    function randomBetween (min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const bison = [];
+    const totalBison = 15;
+    const bisonSizeVariance = 4;
+    const bisonMovementPxVariance = 100;
+    const bisonTemplate = document.querySelector('.bison');
+    const herdLocation = document.querySelector('.bison-herd');
+    const canvasSize = herdLocation.offsetWidth;
+
+    function herdEm () {  
+      if (!bisonTemplate || !herdLocation) {
+        console.log('Couldn\'t render a bison herd. Awkward...');
+      }
+
+      for (let bisonIndex = 0; bisonIndex < totalBison; bisonIndex++) {
+        const bbBison = bisonTemplate.cloneNode(true);
+        const color = bisonColor();
+        const position = randomBetween(0, canvasSize);
+        const scale = bisonScale(bisonSizeVariance) + 2;
+
+        bbBison.classList.add(`bison-${bisonIndex}`);
+        bbBison.querySelectorAll('rect').forEach(function (r) {
+          r.style.fill = color;
+        });
+
+        bbBison.style.position = 'absolute';
+        bbBison.style.transform = `scale(${scale})`;
+        bbBison.style.left = `${position}px`;
+        bbBison.style.bottom = `${((scale * 20) - 20) / 2}px`;
+        bbBison.style.transition = `left 2s ease-in-out`;
+
+        herdLocation.append(bbBison);
+        bison.push({
+          element: bbBison,
+          position,
+          rect: scale * 20
+        })
+      }
+
+      const halfHerd = Math.round(totalBison / 2);
+      const pods = [
+        bison.slice(0, halfHerd),
+        bison.slice(halfHerd, totalBison)
+      ];
+
+      setInterval(function () { animateHerdSection(pods[0], 4000) }, 4000);
+      setInterval(function () { animateHerdSection(pods[1], 2000) }, 2000);
+
+      bisonTemplate.remove();
+    }
+
+    herdEm();
+
+    function animateHerdSection (bisonSection, time) {
+      for (const singleBison of bisonSection) {
+        if (singleBison.position < singleBison.rect - 1) {
+          singleBison.element.style.display = `none`;
+          singleBison.position = canvasSize + singleBison.rect + 1;
+        } else {
+          const movement = randomBetween(0, bisonMovementPxVariance);
+          singleBison.position -= movement;
+
+          if (movement < 5) {
+            // simulate pauses
+            continue;
+          }
+          singleBison.element.style.display = `block`;
+          singleBison.element.style.transition = `left ${time / 1000}s ease-in-out`;
+        }
+  
+        singleBison.element.style.left = `${singleBison.position}px`;
+      }
+    }
+
+  </script>
   <!-- <script type="module" src="./script.js"></script> -->
 
 </body>
