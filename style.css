@@ -67,6 +67,7 @@ html {
 
 .speaker-info {
   color: white;
+  position: relative;
 }
 .sponsor-info {
   color: black;
@@ -111,6 +112,10 @@ html {
   margin-bottom: 30px; /* Added some space at the bottom */
 }
 
+.speaker-info:hover {
+  z-index: 1000;
+}
+
 .speaker-img {
   width: 15vw; /* Responsive width */
   height: 15vw; /* Responsive height, keeping the aspect ratio */
@@ -120,15 +125,93 @@ html {
   object-position: center center;
   border-radius: 50%;
   display: block;
-  margin: 0 auto;
+  margin: 1em auto;
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: box-shadow 0.3s ease, transform 0.2s ease; /* Smooth transition for shadow and transform */
+  transition: all 0.3s ease, transform 0.2s ease; /* Smooth transition for shadow and transform */
 }
 
-.speaker-img:hover {
+.speaker-info:hover .speaker-img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifted' effect */
   transform: scale(1.05); /* Slightly scale up the images on hover */
+}
+
+#schedule-section {
+  display: flex;
+  width: 100%;
+  min-height: 1375px;
+  padding: 80px 120px;
+  background-image: url(public/images/hills.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#schedule-header {
+  width: 100%;
+  text-align: center;
+}
+
+#schedule-header > h2 {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: .2em;
+  width: auto;
+  display: inline-block;
+}
+
+#schedule {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+}
+
+#schedule > li {
+  background-color: white;
+  display: block;
+  padding: 2em;
+  margin-bottom: 1em;
+  min-width: 50vw;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+#schedule > li:hover {
+  transform: scale(1.05);
+}
+
+#schedule > li > .color-bar {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#schedule .title {
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+#schedule .who {
+  font-size: 1em;
+  display: block;
+  color: gray;
+  width: 100%;
+}
+
+#schedule .time {
+  font-size: 1.5em;
+  display: block;
+  width: 100%;
+  color: gray;
 }
 
 x p {
