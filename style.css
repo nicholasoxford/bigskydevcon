@@ -25,6 +25,7 @@ html {
 
 /* Style the navbar */
 #navbar {
+  margin-top: 100px;
   overflow: hidden;
   background: var(--Brand-Primary-P01, #1e1e1e);
   display: flex;
@@ -579,4 +580,28 @@ a {
   width: 5px;
   border-radius: 10px;
   background-color: white;
+}
+
+.live-bar {
+  background-color: #4f4f4f;
+  color: white;
+  overflow: hidden;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.live-bar .dot {
+  display: inline-block;
+  background-color: red;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
 }
