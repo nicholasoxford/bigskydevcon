@@ -25,7 +25,7 @@ html {
 
 /* Style the navbar */
 #navbar {
-  margin-top: 100px;
+  /* margin-top: 100px; */
   overflow: hidden;
   background: var(--Brand-Primary-P01, #1e1e1e);
   display: flex;
