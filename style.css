@@ -592,6 +592,16 @@ a {
 
 .sponsor-info a {
   color: black;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.sponsor-info img {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 3em;
+  object-fit: contain;
 }
 
 .scroll-icon {
