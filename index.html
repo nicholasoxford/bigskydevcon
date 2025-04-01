@@ -109,9 +109,12 @@
     </ul>
   </div> -->
   <div
-    style="background-color: white; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: center; display: inline-flex; text-align: center;">
-    <div>
-      <div id="speakers-images" style="padding: 2em;">
+  class="sponsors"
+  style="background-color: white; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: center; display: inline-flex; text-align: center;">
+  <div>
+      <h1 style="flex-grow: 1;">Our Sponsors</h1>
+      <h2 style="flex-grow: 1;">Exhibitors</h2>
+      <div class="speakers-images" style="padding: 2em;">
         <div class="sponsor-info">
           <a href="https://instructlab.ai/?utm_referrer=bigskydevcon">
             <img class="speaker-img"
@@ -131,8 +134,27 @@
             <img class="speaker-img"
               src="https://bsdc.sfo2.cdn.digitaloceanspaces.com/bss.png" alt="Big Sky Software">
           </a>
+        </div>        
+      </div>
+    </div>
+    <div class="sponsors" style="background-color: white; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: center; display: inline-flex; text-align: center;">
+      <h2 style="flex-grow: 1;">Supporters</h2>
+      <div class="speakers-images speakers-images-smaller" style="padding: 2em;">
+        <div class="sponsor-info">
+          <a href="https://verygood.ventures/?utm_referrer=bigskydevcon">
+            <img class="speaker-img"
+              src="https://bsdc.sfo2.cdn.digitaloceanspaces.com/VGV_lockup.png" alt="Very Good Ventures">
+          </a>
+        </div>
+
+        <div class="sponsor-info">
+          <a href="https://zootsolutions.com/?utm_referrer=bigskydevcon">
+            <img class="speaker-img"
+              src="https://bsdc.sfo2.cdn.digitaloceanspaces.com/zoot-logo-colour.jpg" alt="Zoot Enterprises">
+          </a>
         </div>
       </div>
+
     </div>
     <div style="padding: 2em;">
       <div
@@ -235,7 +257,7 @@
 
     function closeAllSpeakers () {
       speakerExpanded = false;
-      document.querySelectorAll('#speakers > #speakers-images > .speaker-info.expanded').forEach(function ($speaker) {
+      document.querySelectorAll('.speakers > #speakers-images > .speaker-info.expanded').forEach(function ($speaker) {
         $speaker.classList.remove('expanded');
       });
     }
@@ -270,7 +292,7 @@ What are you doing here? You should go register for BSDC instead: https://bsdc25
       }
     });
 
-    document.querySelectorAll('#speakers > #speakers-images > .speaker-info').forEach(function ($speaker) {
+    document.querySelectorAll('.speakers > #speakers-images > .speaker-info').forEach(function ($speaker) {
       $speaker.addEventListener('click', handleSpeakerExpand($speaker));
       const closeBtn = document.createElement('div');
       closeBtn.classList.add('close');

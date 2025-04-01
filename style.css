@@ -10,11 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: Citizen Slab;
-  src: url("public/citizen_slab_personal.otf") format("opentype");
-}
-
 html {
   overflow-x: hidden;
 }
@@ -121,7 +116,7 @@ html {
   text-align: center;
 }
 
-#speakers-images {
+.speakers-images {
   width: 100%;
   max-height: 100%;
   text-align: center;
@@ -396,6 +391,10 @@ x p {
   justify-content: center;
 }
 
+.sponsors h2, .sponsors h1 {
+  color: black;
+}
+
 .bison-herd {
   height: 100px;
   display: block;
@@ -443,6 +442,7 @@ x p {
   gap: 64px;
   overflow: scroll;
 }
+
 .about-header {
   font-size: 80px;
   font-family: "Jersey 15", serif;
@@ -474,14 +474,14 @@ x p {
 }
 
 .big-sky {
-  font-family: "Citizen Slab", serif;
+  font-family: "Jersey 15", serif;
   font-size: 80px; /* Adjust as needed */
   color: black;
   margin-bottom: 5px;
 }
 
 .dev-con {
-  font-family: "Citizen Slab", serif;
+  font-family: "Jersey 15", serif;
   font-size: 80px; /* Adjust as needed */
   color: white;
   background-color: black;
@@ -514,12 +514,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Citizen Slab", serif;
+  font-family: "Jersey 15", serif;
   font-weight: bold;
 }
 
 h1 {
-  font-size: 10vw;
+  font-size: 60px;
   font-weight: 800;
   left: 20px;
   line-height: 1;
