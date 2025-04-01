@@ -38,7 +38,7 @@
   <div class="image-container main-hero">
     <div class="text-container">
       <div class="text-background">
-        <p class="conference-text">We're back for 2025.<br />CFP & ticket sales now open.</p>
+        <p class="conference-text">We're back for 2025.<br />CFP & ticket sales now open.<br /><span class="countdown"></span></p>
       </div>
     </div>
   </div>
@@ -108,12 +108,19 @@
      
     </ul>
   </div> -->
-  <div
-  class="sponsors"
-  style="background-color: white; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: center; display: inline-flex; text-align: center;">
+<section class="sponsors-section">
+  <div class="sponsors">
   <div>
       <h1 style="flex-grow: 1;">Our Sponsors</h1>
-      <h2 style="flex-grow: 1;">Exhibitors</h2>
+      <h2 style="flex-grow: 1;">
+        <span
+          style="color: #D6FF62; font-family: 'Jersey 15', Serif; font-weight: 500; word-wrap: break-word">{
+        </span>
+        Exhibitors
+        <span
+          style="color: #D6FF62; font-family: 'Jersey 15', Serif; font-weight: 500; word-wrap: break-word">}
+        </span>
+      </h2>
       <div class="speakers-images" style="padding: 2em;">
         <div class="sponsor-info">
           <a href="https://instructlab.ai/?utm_referrer=bigskydevcon">
@@ -137,8 +144,16 @@
         </div>        
       </div>
     </div>
-    <div class="sponsors" style="background-color: white; width: 100%; height: 100%; flex-direction: column; justify-content: center; align-items: center; display: inline-flex; text-align: center;">
-      <h2 style="flex-grow: 1;">Supporters</h2>
+    <div class="sponsors">
+      <h2 style="flex-grow: 1;">
+        <span
+          style="color: #D6FF62; font-family: 'Jersey 15', Serif; font-weight: 500; word-wrap: break-word">{
+        </span>
+        Supporters
+        <span
+          style="color: #D6FF62; font-family: 'Jersey 15', Serif; font-weight: 500; word-wrap: break-word">}
+        </span>
+      </h2>
       <div class="speakers-images speakers-images-smaller" style="padding: 2em;">
         <div class="sponsor-info">
           <a href="https://verygood.ventures/?utm_referrer=bigskydevcon">
@@ -156,27 +171,28 @@
       </div>
 
     </div>
-    <div style="padding: 2em;">
+    <div style="padding: 5em; background-color: #D6FF62;">
       <div
-        style="padding-bottom: .5em; align-self: stretch; color: #1E1E1E; font-size: 80px; font-family: 'Jersey 15'; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
+        style="padding-bottom: .5em; align-self: stretch; color: #3b324b; font-size: 80px; font-family: 'Jersey 15'; font-weight: 400; line-height: 57.60px; word-wrap: break-word">
         Big Thanks To Our Sponsors</div>
       <div
-        style="padding-bottom: 1em; align-self: stretch; color: #1E1E1E; font-size: 24px; font-family: Source Code Pro; font-weight: 400; line-height: 32.40px; word-wrap: break-word">
+        style="padding-bottom: 1em; align-self: stretch; color: #3b324b; font-size: 24px; font-family: Source Code Pro; font-weight: 400; line-height: 32.40px; word-wrap: break-word">
         Thanks to our sponsors for making this event possible and help funding Montana Programmers throughout the
         years.
       </div>
       <div
-        style="padding-left: 40px; padding-right: 40px; padding-top: 24px; padding-bottom: 24px; border-radius: 40px; border: 2px #1E1E1E solid; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+        style="padding-left: 40px; padding-right: 40px; padding-top: 24px; padding-bottom: 24px; border-radius: 40px; border: 2px #3b324b solid; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
         <div
-          style="text-align: center; color: #1E1E1E; font-size: 18px; font-family: Source Code Pro; font-weight: 600; line-height: 24.30px; word-wrap: break-word">
+          style="text-align: center; color: #3b324b; font-size: 18px; font-family: Source Code Pro; font-weight: 600; line-height: 24.30px; word-wrap: break-word">
           <a href="mailto:bsdc@montanaprogrammers.org"
-            style="text-align: center; color: #1E1E1E; font-size: 18px; font-family: Source Code Pro; font-weight: 600; line-height: 24.30px; word-wrap: break-word">
-            Inquire about Sponsoring <span style="color: #1E1E1E; font-weight: 800;"> + </span></a>
+            style="text-align: center; color: #3b324b; font-size: 18px; font-family: Source Code Pro; font-weight: 600; line-height: 24.30px; word-wrap: break-word">
+            Inquire about Sponsoring <span style="color: #3b324b; font-weight: 800;"> + </span></a>
         </div>
 
       </div>
     </div>
   </div>
+</section>
 
   <div
     style="width: 100%; height: 100%; padding-left: 120px; padding-right: 120px; padding-top: 80px; padding-bottom: 80px; background: #1E1E1E; flex-direction: column; justify-content: center; align-items: center; display: inline-flex;">
@@ -252,6 +268,7 @@
   <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
   <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
   <script src='https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js'></script>
   <script type="text/javascript">
     var speakerExpanded = false;
 
@@ -310,6 +327,9 @@ What are you doing here? You should go register for BSDC instead: https://bsdc25
         closeAllSpeakers();
       }
     });
+
+    countdown();
+    setInterval(countdown, 1000);
 
     function bisonColor () {
       return '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
@@ -394,6 +414,22 @@ What are you doing here? You should go register for BSDC instead: https://bsdc25
   
         singleBison.element.style.left = `${singleBison.position}px`;
       }
+    }
+
+    
+    function countdown () {
+      const conferenceDate = moment(new Date('2025-08-02T09:00:00Z'));
+      const countdownEl = document.querySelector('.conference-text .countdown');
+      const now = moment();
+      const duration = moment.duration(conferenceDate.diff(now));
+      const timeLeft = {
+        days: Math.floor(duration.asDays()),
+        hours: duration.hours(),
+        minutes: duration.minutes(),
+        seconds: duration.seconds(),
+      }
+
+      countdownEl.innerText = `{ ${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}:${timeLeft.seconds} }`
     }
 
   </script>

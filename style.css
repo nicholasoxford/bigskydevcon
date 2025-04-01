@@ -102,6 +102,37 @@ html {
   position: relative;
 }
 
+section.sponsors-section {
+  background:
+    linear-gradient(6deg, rgba(58, 50, 73, 0.9), 0%, rgba(0, 0, 0, 0.6) 100%),
+    url(https://bsdc.sfo2.cdn.digitaloceanspaces.com/glitch_bg2.gif);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+section.sponsors-section h1,
+section.sponsors-section h2,
+section.sponsors-section {
+  color: white;
+}
+
+section.sponsors-section h2 {
+  margin-bottom: 0;
+  font-size: 50px;
+}
+
+.sponsors {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  text-align: center;
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 900px) {
   #speakers {
@@ -391,10 +422,6 @@ x p {
   justify-content: center;
 }
 
-.sponsors h2, .sponsors h1 {
-  color: black;
-}
-
 .bison-herd {
   height: 100px;
   display: block;
@@ -492,7 +519,7 @@ x p {
   width: fit-content;
 }
 
-.conference-text {
+.conference-text, .conference-text span {
   color: var(--Brand-Primary-P01, #3b324b);
   text-align: center;
   leading-trim: both;
@@ -506,6 +533,11 @@ x p {
   font-weight: 500;
   /* line-height: 135%; 86.4px */
   /* margin-top: 10px; */
+}
+
+.conference-text .countdown {
+  display: block;
+  padding-top: 1em;
 }
 
 h1,
@@ -590,9 +622,11 @@ a {
   color: white;
 }
 
+
 .sponsor-info a {
   color: black;
   border-radius: 50%;
+  background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: block;
 }
