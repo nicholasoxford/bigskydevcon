@@ -476,17 +476,18 @@ x p {
   font-weight: 400;
   line-height: 57.6px;
 }
-.about-text {
-  color: var(--Brand-Primary-P01, #1e1e1e);
-  leading-trim: both;
 
+.about-text {
+  color: white;
+  leading-trim: both;
   text-edge: cap;
   /* Body/B—01/Regular */
   font-family: "Source Code Pro";
-  font-size: 24px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 135%; /* 32.4px */
+  padding: 0 2em;
 }
 
 .background-image {
@@ -687,5 +688,27 @@ a {
 
   #navbar .navbar-items {
     margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #navbar {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #navbar .navbar-items {
+    margin-top: 2em;
+  }
+
+  .image-container.main-hero + div {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .image-container.main-hero + div > div {
+    width: 100% !important;
+    max-width: 800px !important;
   }
 }
