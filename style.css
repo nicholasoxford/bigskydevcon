@@ -818,14 +818,6 @@ a {
   color: #D6FF62;
 }
 
-.speakers-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
 .speaker-placeholder {
   text-align: center;
   color: #EFEFEF;
@@ -1244,11 +1236,12 @@ a {
 }
 
 .speakers-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .speaker-placeholder {
@@ -1308,4 +1301,61 @@ a {
   border-radius: 10px;
   /* only a little wider than content */
   width: fit-content;
+}
+
+/* Speaker cards */
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .speakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.speaker {
+  background: linear-gradient(6deg, rgba(58, 50, 73, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%),
+    url(https://bsdc.sfo2.cdn.digitaloceanspaces.com/glitch_bg2.gif);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 20px 18px -10px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.speaker:hover {
+  box-shadow: 0px 0px 5px 2px #D6FF62, 0px 10px 10px -7px rgba(0, 0, 0, 0.9);
+}
+
+.speaker img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.speaker .speaker-name {
+  font-family: "Jersey 15", serif;
+  color: white;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.speaker .speaker-info {
+  display: none;
+  visibility: hidden;
 }
