@@ -669,6 +669,12 @@ What are you doing here? You should go register for BSDC instead: https://bsdc25
 
     // Shuffle speakers on every page load
     document.addEventListener('DOMContentLoaded', function () {
+      const now = new Date();
+      const isFourthOfJuly = now > moment('2025-07-04T08:00:00Z').toDate() && now < moment('2025-07-05T08:00:00Z').toDate();
+      if (isFourthOfJuly) {
+        togglePixelFireworks(true);
+      }
+
       const speakersGrid = document.querySelector('.speakers-grid');
       if (!speakersGrid) return;
       // Get all speaker elements
@@ -684,6 +690,8 @@ What are you doing here? You should go register for BSDC instead: https://bsdc25
       speakers.forEach(speaker => speakersGrid.appendChild(speaker));
     });
 
+
+    let setPixelFireworks = false;
     function countdown () {
       const conferenceDate = moment(new Date('2025-08-02T08:00:00Z'));
       const countdownEl = document.querySelector('.conference-text .countdown');
@@ -702,6 +710,11 @@ What are you doing here? You should go register for BSDC instead: https://bsdc25
         document.querySelector('.livestream-btn').style.visibility = 'visible';
         document.querySelector('.tickets-btn').style.display = 'none';
         document.querySelector('.tickets-btn').style.visibility = 'hidden';
+
+        if (!setPixelFireworks) {
+          togglePixelFireworks(true);
+          setPixelFireworks = true;
+        }
       } else {
         document.querySelector('.livestream-btn').style.display = 'none';
         document.querySelector('.livestream-btn').style.visibility = 'hidden';
