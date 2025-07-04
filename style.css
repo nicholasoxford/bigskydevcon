@@ -1334,10 +1334,13 @@ a {
   align-items: center;
   gap: 1rem;
   transition: all 0.2s ease-in-out;
+  position: relative;
+  cursor: pointer;
 }
 
 .speaker:hover {
-  box-shadow: 0px 0px 5px 2px #D6FF62, 0px 10px 10px -7px rgba(0, 0, 0, 0.9);
+  transform: scale(1.02);
+  z-index: 5;
 }
 
 .speaker img {
@@ -1358,6 +1361,26 @@ a {
 .speaker .speaker-info {
   display: none;
   visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.95);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9em;
+  line-height: 1.4;
+  overflow-y: auto;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.speaker:hover .speaker-info {
+  display: block;
+  visibility: visible;
 }
 
 .schedule-list {
@@ -1382,6 +1405,17 @@ a {
   position: relative;
   transition: box-shadow 0.2s;
 }
+
+.schedule-block > .block-extra {
+  display: none;
+}
+/* 
+.schedule-block:hover > .block-extra {
+  display: block;
+} */
+
+
+
 
 .schedule-block--speaker {
   background: linear-gradient(90deg, rgba(58,50,73,0.95) 0%, rgba(30,30,30,0) 90%);
@@ -1427,5 +1461,53 @@ a {
   .block-title {
     font-size: 1.2em;
   }
+}
+
+.red-btn {
+  background-color: #f02a2a !important;
+  color: white !important;
+}
+
+.red-btn .dot {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.livestream-btn {
+  display: none;
+  visibility: hidden;
+}
+
+
+.pixel-fireworks-container {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 9999;
+  overflow: visible;
+}
+.pixel-firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  opacity: 1;
+  will-change: transform, opacity;
+  pointer-events: none;
 }
 
