@@ -529,39 +529,48 @@ This year's event features hours of presentations—17 talks in total—covering
 What are you doing here? You should go register for BSDC instead: https://bsdc25.eventbrite.com
     `);
 
-    // Improved navbar scroll handling for smoother experience, especially on mobile
-    (function () {
+    // Improved scroll performance with requestAnimationFrame
+    (function() {
       const nav = document.querySelector('#navbar');
-      let lastScrollY = window.scrollY;
+      let lastKnownScrollPosition = 0;
       let ticking = false;
-
-      function checkNav () {
-        // Use getBoundingClientRect for more accurate position on mobile
-        const top = window.innerHeight / 3;
-        if (window.scrollY >= top) {
+      
+      function updateNavbar(scrollPos) {
+        const threshold = window.innerHeight / 3;
+        if (scrollPos >= threshold) {
           nav.classList.add('fixed');
         } else {
           nav.classList.remove('fixed');
         }
-        ticking = false;
       }
 
-      function onScroll () {
+      // Throttled scroll handler
+      document.addEventListener('scroll', function(e) {
+        lastKnownScrollPosition = window.scrollY;
+
         if (!ticking) {
-          window.requestAnimationFrame(checkNav);
+          window.requestAnimationFrame(function() {
+            updateNavbar(lastKnownScrollPosition);
+            ticking = false;
+          });
+
           ticking = true;
         }
-      }
+      }, {passive: true}); // Passive listener for better performance
 
-      window.addEventListener('scroll', onScroll, { passive: true });
-
-      // Also check on resize, as viewport height may change on mobile
-      window.addEventListener('resize', function () {
-        checkNav();
-      }, { passive: true });
+      // Handle resize events
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        if (resizeTimeout) {
+          clearTimeout(resizeTimeout);
+        }
+        resizeTimeout = setTimeout(function() {
+          updateNavbar(lastKnownScrollPosition);
+        }, 66); // Debounced to run max every 66ms
+      }, {passive: true});
 
       // Initial check
-      checkNav();
+      updateNavbar(window.scrollY);
     })();
 
     document.querySelectorAll('.speakers > #speakers-images > .speaker-info').forEach(function ($speaker) {

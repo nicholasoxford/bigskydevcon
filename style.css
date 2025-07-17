@@ -8,6 +8,8 @@ body {
   position: relative;
   margin: 0;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -24,7 +26,7 @@ html {
   overflow: hidden;
   /* background: white; */
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   right: 0;
   top: 0;
@@ -35,12 +37,17 @@ html {
   align-self: stretch;
   height: 180px;
   transition: all ease-in-out 0.4s;
+  will-change: transform, height;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background: transparent;
 }
 
 #navbar.fixed {
   background: rgba(255, 255, 255, 0.8);
   height: 60px;
-  z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .text-background {
@@ -425,6 +432,9 @@ x p {
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .bison-herd {
@@ -1337,13 +1347,15 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   position: relative;
   cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .speaker:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) translateZ(0);
   z-index: 5;
 }
 
@@ -1407,7 +1419,9 @@ a {
   gap: 0.5rem;
   border-left: 6px solid #D6FF62;
   position: relative;
-  transition: box-shadow 0.2s;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .schedule-block > .block-extra {
@@ -1427,6 +1441,7 @@ a {
 
 .schedule-block:hover {
   box-shadow: 0 0 0 2px #D6FF62, 0 10px 24px -8px rgba(0,0,0,0.7);
+  transform: translateY(-2px) translateZ(0);
   z-index: 2;
 }
 
@@ -1513,5 +1528,25 @@ a {
   opacity: 1;
   will-change: transform, opacity;
   pointer-events: none;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Force hardware acceleration for fixed elements */
+.fixed {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
