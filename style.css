@@ -644,6 +644,10 @@ a {
   object-fit: contain;
 }
 
+.sponsor-blk-bg a {
+  background-color: black;
+}
+
 .scroll-icon {
   height: 50px;
   width: 35px;
