@@ -439,7 +439,7 @@ x p {
 
 .bison-herd {
   height: 100px;
-  display: block;
+  display: none;
   position: absolute;
   bottom: -5px;
   right: 0;
@@ -447,7 +447,7 @@ x p {
 }
 
 .bison {
-  display: inline-block;
+  display: none;
   position: absolute;
 }
 
@@ -758,6 +758,7 @@ a {
 }
 
 .image-container.main-hero + div::after {
+  display: none;
   content: '';
   position: absolute;
   bottom: -50px;
