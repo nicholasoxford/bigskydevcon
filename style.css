@@ -465,6 +465,18 @@ x p {
   position: relative; /* To position the logo absolutely within this container */
   height: 955px;
 }
+
+.flex-column-center {
+  justify-content: center;
+  align-items: center;
+}
+
+#gallery-container {
+  width: 100%;
+  padding: 5em;
+  text-align: center;
+}
+
 .buffalo-logo {
   position: absolute;
   max-width: 100%; /* Adjust as needed */

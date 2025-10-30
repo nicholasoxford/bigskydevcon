@@ -1,2 +1,5 @@
 .DS_STORE
 attendees25.csv
+images
+images-processed
+node_modules

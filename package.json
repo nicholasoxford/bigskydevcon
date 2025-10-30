@@ -1,0 +1,13 @@
+{
+  "name": "bigskydevcon",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Big Sky Dev Con website",
+  "scripts": {
+    "process-images": "node scripts/process-images.mjs",
+    "generate-photoswipe-json": "node scripts/generate-photoswipe-json.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4"
+  }
+}
